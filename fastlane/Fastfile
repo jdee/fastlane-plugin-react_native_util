@@ -1,3 +1,9 @@
-lane :test do
-  react_pod
+require_relative 'lib/paths'
+
+lane :convert_app do
+  react_pod chdir: UNCONVERTED_APP_PATH
+end
+
+lane :update_app do
+  react_pod update: true, chdir: CONVERTED_APP_PATH
 end

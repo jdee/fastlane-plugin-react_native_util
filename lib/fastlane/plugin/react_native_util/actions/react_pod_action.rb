@@ -6,6 +6,7 @@ module Fastlane
   module Actions
     class ReactPodAction < Action
       def self.run(params)
+        UI.message "Running in #{params[:chdir]}"
         Dir.chdir params[:chdir] do
           converter = ReactNativeUtil::Converter.new repo_update: params[:repo_update]
           if params[:update]
