@@ -1,6 +1,10 @@
 # react_native_util plugin
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-react_native_util)
+[![Gem](https://img.shields.io/gem/v/fastlane-plugin-react_native_util.svg?style=flat)](https://rubygems.org/gems/fastlane-plugin-react_native_util)
+[![Downloads](https://img.shields.io/gem/dt/fastlane-plugin-react_native_util.svg?style=flat)](https://rubygems.org/gems/fastlane-plugin-react_native_util)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/jdee/fastlane-plugin-react_native_util/blob/master/LICENSE)
+[![CircleCI](https://img.shields.io/circleci/project/github/jdee/fastlane-plugin-react_native_util.svg)](https://circleci.com/gh/jdee/fastlane-plugin-react_native_util)
 
 ## CLI/gem
 
