@@ -2,6 +2,10 @@
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-react_native_util)
 
+## CLI/gem
+
+See also https://github.com/jdee/react_native_util
+
 ## Getting Started
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-react_native_util`, add it to your project by running:
