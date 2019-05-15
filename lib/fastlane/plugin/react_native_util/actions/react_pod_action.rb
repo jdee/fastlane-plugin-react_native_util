@@ -8,11 +8,16 @@ module Fastlane
       def self.run(params)
         UI.message "Running in #{params[:chdir]}"
         Dir.chdir params[:chdir] do
-          converter = ReactNativeUtil::Converter.new repo_update: params[:repo_update]
-          if params[:update]
-            converter.update_project!
-          else
-            converter.convert_to_react_pod!
+          converter = ::ReactNativeUtil::Converter.new repo_update: params[:repo_update]
+
+          begin
+            if params[:update]
+              converter.update_project!
+            else
+              converter.convert_to_react_pod!
+            end
+          rescue ::ReactNativeUtil::BaseException => e
+            UI.user_error! e.message
           end
         end
       end
