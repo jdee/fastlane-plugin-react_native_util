@@ -1,0 +1,37 @@
+platform :ios, '9.0'
+
+target 'ConvertedApp' do
+  pod 'React',
+    path: '../node_modules/react-native',
+    subspecs: %w[
+      Core
+      CxxBridge
+      DevSupport
+      RCTBlob
+      RCTAnimation
+      RCTActionSheet
+      RCTGeolocation
+      RCTImage
+      RCTLinkingIOS
+      RCTNetwork
+      RCTSettings
+      RCTText
+      RCTVibration
+      RCTWebSocket
+    ]
+  pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
+  pod 'Folly', podspec: '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  # --- react-native link adds pods below this line. ---
+
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+end
+
+
+target 'ConvertedAppTests' do
+  pod 'React', path: '../node_modules/react-native', subspecs: ["Core", "CxxBridge"]
+  pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga'
+  pod 'Folly', podspec: '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+
