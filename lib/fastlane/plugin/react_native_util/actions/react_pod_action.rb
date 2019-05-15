@@ -1,6 +1,5 @@
 require 'fastlane/action'
-require 'react_native_util/converter'
-require 'react_native_util/metadata' # work around a require issue in the gem
+require 'react_native_util'
 require_relative '../helper/react_native_util_helper'
 
 module Fastlane
