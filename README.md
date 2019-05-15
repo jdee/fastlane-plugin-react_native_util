@@ -12,15 +12,47 @@ fastlane add_plugin react_native_util
 
 ## About react_native_util
 
-Community utilities for React Native projects
+### react_pod action
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Converts a React Native Xcode project to use the React pod from node_modules
+instead of the projects in the Libraries group. This makes it easier to manage
+native dependencies while preserving compatibility with `react-native link`.
+The command looks for your app's package.json in the current directory and
+expects your Xcode project to be located under the ios subdirectory and have
+the name specified for your app in package.json. If a Podfile is found in the
+ios subdirectory, the conversion will fail.
+
+The React.xcodeproj in the Libraries group of a project created by
+`react-native init` automatically starts the Metro packager via a Run Script
+build phase. When the react_pod command removes the Libraries group from your
+app project, it adds an equivalent build phase to your app project so that the
+packager will automatically be started when necessary by Xcode.
+
+Use the `update` option to update the packager script after
+updating React Native, in case the packager script on the React.xcodeproj changes
+after it's removed from your project.
+
+### Options
+
+|option|description|type|default|env. var.|
+|------|-----------|----|-------|---------|
+|chdir|Specify the path to the app (location of package.json)|String|.||
+|update|Update a previously converted project|Boolean|false||
+|repo_update|Don't update the local podspec repo|Boolean|true|REACT_NATIVE_UTIL_REPO_UPDATE|
 
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+Convert examples/UnconvertedApp:
+```bash
+fastlane convert_app
+```
+
+Update examples/ConvertedApp:
+```bash
+fastlane update_app
+```
 
 ## Run tests for this plugin
 
